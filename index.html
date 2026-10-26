@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>ai3.land — open-source tools for the Autonomys Network</title>
+    <meta
+      name="description"
+      content="PermaDrive (permanent on-chain file storage) and XDM Bridge (consensus ↔ Auto EVM transfers): pure-frontend, open-source tools for the Autonomys Network. No accounts, no backends — your keys stay in your wallet."
+    />
+    <meta property="og:title" content="ai3.land — open-source tools for the Autonomys Network" />
+    <meta
+      property="og:description"
+      content="PermaDrive and XDM Bridge: pure-frontend, open-source tools for Autonomys. No accounts, no backends."
+    />
+    <meta property="og:url" content="https://ai3.land/" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a flash.
+      (function () {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-mark">◆</span>
+          <div>
+            <h1>ai3.land</h1>
+            <p class="tagline">Open-source tools for the Autonomys Network</p>
+          </div>
+        </div>
+        <button id="theme-toggle" class="btn ghost small" title="Toggle color scheme" aria-label="Toggle color scheme">🌙</button>
+      </header>
+
+      <main>
+        <p class="intro">
+          Autonomys is a permanent, decentralized storage network; <strong>AI3</strong> is its native token.
+          The tools below are free-software, pure-frontend clients for it: no accounts, no backends —
+          chain access goes straight from your browser to permissionless public infrastructure,
+          and your keys stay in your wallet.
+        </p>
+
+        <div class="grid">
+          <article class="card tool">
+            <h2>PermaDrive</h2>
+            <p class="tool-desc">
+              Permanent file storage. Files are packed into IPLD DAGs in the browser and published directly
+              to the Autonomys consensus chain — pay the one-time on-chain storage fee and the farmer network
+              archives them permanently. No accounts, no credit expiry, manifest-based retrieval.
+            </p>
+            <p class="tool-meta muted">permadrive.ai3.land · permanent storage · pay per use</p>
+            <div class="actions">
+              <a class="btn primary" href="https://permadrive.ai3.land/">Open PermaDrive</a>
+              <a class="btn" href="https://github.com/tgarm/permadrive" target="_blank" rel="noreferrer noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card tool">
+            <h2>XDM Bridge</h2>
+            <p class="tool-desc">
+              Cross-domain AI3 transfers. Move tokens between the Autonomys consensus chain and the Auto EVM
+              domain in both directions, straight from your wallet — with progress tracking for the
+              cross-domain arrival window and paced RPC calls that respect public-node rate limits.
+            </p>
+            <p class="tool-meta muted">xdm-bridge.ai3.land · XDM protocol · pure frontend</p>
+            <div class="actions">
+              <a class="btn primary" href="https://xdm-bridge.ai3.land/">Open XDM Bridge</a>
+              <a class="btn" href="https://github.com/tgarm/ai3-xdm-bridge" target="_blank" rel="noreferrer noopener">GitHub</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="muted more">More tools are in development.</p>
+      </main>
+
+      <footer class="app-footer muted">
+        Independent open-source projects, not an official Autonomys product ·
+        <a href="https://docs.autonomys.xyz/" target="_blank" rel="noreferrer noopener">Autonomys docs</a>
+        ·
+        <a href="https://github.com/tgarm" target="_blank" rel="noreferrer noopener">GitHub</a>
+      </footer>
+    </div>
+    <script>
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        function render() {
+          btn.textContent = document.documentElement.dataset.theme === 'dark' ? '🌙' : '☀️';
+        }
+        btn.addEventListener('click', function () {
+          var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+          document.documentElement.dataset.theme = next;
+          localStorage.setItem('theme', next);
+          render();
+        });
+        render();
+      })();
+    </script>
+  </body>
+</html>
