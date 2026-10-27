@@ -139,6 +139,13 @@ body {
   font-size: 13px;
 }
 
+/* Language select sits next to the theme toggle in the header */
+.lang-select {
+  flex-shrink: 0;
+  width: auto;
+  cursor: pointer;
+}
+
 .more {
   margin: 20px 0 0;
   font-size: 13px;

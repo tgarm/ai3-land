@@ -35,14 +35,18 @@
           <span class="brand-mark">◆</span>
           <div>
             <h1>ai3.land</h1>
-            <p class="tagline">Open-source tools for the Autonomys Network</p>
+            <p class="tagline" data-i18n="tagline">Open-source tools for the Autonomys Network</p>
           </div>
         </div>
+        <select id="lang-select" class="btn ghost small lang-select" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+        </select>
         <button id="theme-toggle" class="btn ghost small" title="Toggle color scheme" aria-label="Toggle color scheme">🌙</button>
       </header>
 
       <main>
-        <p class="intro">
+        <p class="intro" data-i18n="intro">
           Autonomys is a permanent, decentralized storage network; <strong>AI3</strong> is its native token.
           The tools below are free-software, pure-frontend clients for it: no accounts, no backends —
           chain access goes straight from your browser to permissionless public infrastructure,
@@ -52,43 +56,141 @@
         <div class="grid">
           <article class="card tool">
             <h2>PermaDrive</h2>
-            <p class="tool-desc">
+            <p class="tool-desc" data-i18n="pdDesc">
               Permanent file storage. Files are packed into IPLD DAGs in the browser and published directly
               to the Autonomys consensus chain — pay the one-time on-chain storage fee and the farmer network
               archives them permanently. No accounts, no credit expiry, manifest-based retrieval.
             </p>
-            <p class="tool-meta muted">permadrive.ai3.land · permanent storage · pay per use</p>
+            <p class="tool-meta muted" data-i18n="pdMeta">permadrive.ai3.land · permanent storage · pay per use</p>
             <div class="actions">
-              <a class="btn primary" href="https://permadrive.ai3.land/">Open PermaDrive</a>
+              <a class="btn primary" href="https://permadrive.ai3.land/" data-i18n="pdOpen">Open PermaDrive</a>
               <a class="btn" href="https://github.com/tgarm/permadrive" target="_blank" rel="noreferrer noopener">GitHub</a>
             </div>
           </article>
 
           <article class="card tool">
             <h2>XDM Bridge</h2>
-            <p class="tool-desc">
+            <p class="tool-desc" data-i18n="xdmDesc">
               Cross-domain AI3 transfers. Move tokens between the Autonomys consensus chain and the Auto EVM
               domain in both directions, straight from your wallet — with progress tracking for the
               cross-domain arrival window and paced RPC calls that respect public-node rate limits.
             </p>
-            <p class="tool-meta muted">xdm-bridge.ai3.land · XDM protocol · pure frontend</p>
+            <p class="tool-meta muted" data-i18n="xdmMeta">xdm-bridge.ai3.land · XDM protocol · pure frontend</p>
             <div class="actions">
-              <a class="btn primary" href="https://xdm-bridge.ai3.land/">Open XDM Bridge</a>
+              <a class="btn primary" href="https://xdm-bridge.ai3.land/" data-i18n="xdmOpen">Open XDM Bridge</a>
               <a class="btn" href="https://github.com/tgarm/ai3-xdm-bridge" target="_blank" rel="noreferrer noopener">GitHub</a>
             </div>
           </article>
         </div>
 
-        <p class="muted more">More tools are in development.</p>
+        <p class="muted more" data-i18n="more">More tools are in development.</p>
       </main>
 
       <footer class="app-footer muted">
-        Independent open-source projects, not an official Autonomys product ·
+        <span data-i18n="footer">Independent open-source projects, not an official Autonomys product ·</span>
         <a href="https://docs.autonomys.xyz/" target="_blank" rel="noreferrer noopener">Autonomys docs</a>
         ·
         <a href="https://github.com/tgarm" target="_blank" rel="noreferrer noopener">GitHub</a>
       </footer>
     </div>
+    <script>
+      // i18n (same locale rules as the family's React apps): saved value →
+      // browser language → 'en'. Zero-build: an inline dictionary drives all
+      // [data-i18n] elements; <html lang>, <title> and meta descriptions follow.
+      (function () {
+        var META = {
+          en: {
+            title: 'ai3.land — open-source tools for the Autonomys Network',
+            desc: 'PermaDrive (permanent on-chain file storage) and XDM Bridge (consensus ↔ Auto EVM transfers): pure-frontend, open-source tools for the Autonomys Network. No accounts, no backends — your keys stay in your wallet.',
+            ogTitle: 'ai3.land — open-source tools for the Autonomys Network',
+            ogDesc: 'PermaDrive and XDM Bridge: pure-frontend, open-source tools for Autonomys. No accounts, no backends.',
+          },
+          zh: {
+            title: 'ai3.land — Autonomys 网络的开源工具',
+            desc: 'PermaDrive（链上永久文件存储）与 XDM Bridge（共识链 ↔ Auto EVM 转账）：Autonomys 网络的纯前端开源工具。无账户、无后端 —— 私钥始终在你的钱包里。',
+            ogTitle: 'ai3.land — Autonomys 网络的开源工具',
+            ogDesc: 'PermaDrive 与 XDM Bridge：Autonomys 的纯前端开源工具。无账户、无后端。',
+          },
+        };
+        var STR = {
+          en: {
+            tagline: 'Open-source tools for the Autonomys Network',
+            intro: 'Autonomys is a permanent, decentralized storage network; <strong>AI3</strong> is its native token. The tools below are free-software, pure-frontend clients for it: no accounts, no backends — chain access goes straight from your browser to permissionless public infrastructure, and your keys stay in your wallet.',
+            pdDesc: 'Permanent file storage. Files are packed into IPLD DAGs in the browser and published directly to the Autonomys consensus chain — pay the one-time on-chain storage fee and the farmer network archives them permanently. No accounts, no credit expiry, manifest-based retrieval.',
+            pdMeta: 'permadrive.ai3.land · permanent storage · pay per use',
+            pdOpen: 'Open PermaDrive',
+            xdmDesc: 'Cross-domain AI3 transfers. Move tokens between the Autonomys consensus chain and the Auto EVM domain in both directions, straight from your wallet — with progress tracking for the cross-domain arrival window and paced RPC calls that respect public-node rate limits.',
+            xdmMeta: 'xdm-bridge.ai3.land · XDM protocol · pure frontend',
+            xdmOpen: 'Open XDM Bridge',
+            more: 'More tools are in development.',
+            footer: 'Independent open-source projects, not an official Autonomys product ·',
+            themeTitle: 'Toggle color scheme',
+          },
+          zh: {
+            tagline: 'Autonomys 网络的开源工具',
+            intro: 'Autonomys 是永久性去中心化存储网络，<strong>AI3</strong> 是其原生代币。下列工具是它的自由软件、纯前端客户端：无账户、无后端 —— 链上访问由浏览器直连无许可的公共基础设施，私钥始终留在你的钱包里。',
+            pdDesc: '永久文件存储。文件在浏览器内打包成 IPLD DAG，直接发布到 Autonomys 共识链 —— 支付一次性链上存储费，farmer 网络即永久归档。无账户、无额度过期，凭 manifest 取回。',
+            pdMeta: 'permadrive.ai3.land · 永久存储 · 按次付费',
+            pdOpen: '打开 PermaDrive',
+            xdmDesc: '跨域 AI3 转账。在 Autonomys 共识链与 Auto EVM 域之间双向转移代币，全程由你的钱包直接签名 —— 带跨域到账窗口的进度跟踪，RPC 请求节流以尊重公共节点限流。',
+            xdmMeta: 'xdm-bridge.ai3.land · XDM 协议 · 纯前端',
+            xdmOpen: '打开 XDM Bridge',
+            more: '更多工具开发中。',
+            footer: '独立开源项目，非 Autonomys 官方产品 ·',
+            themeTitle: '切换配色方案',
+          },
+        };
+        var LOCALES = ['en', 'zh'];
+
+        function detect() {
+          try {
+            var saved = localStorage.getItem('locale');
+            if (saved && LOCALES.indexOf(saved) !== -1) return saved;
+          } catch (e) {}
+          var candidates = [navigator.language].concat(navigator.languages || []);
+          for (var i = 0; i < candidates.length; i++) {
+            var base = candidates[i] && candidates[i].split('-')[0];
+            if (base && LOCALES.indexOf(base) !== -1) return base;
+          }
+          return 'en';
+        }
+
+        var lang = detect();
+        var select = document.getElementById('lang-select');
+        var themeBtn = document.getElementById('theme-toggle');
+
+        function apply() {
+          document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+          var m = META[lang];
+          document.title = m.title;
+          var metaDesc = document.querySelector('meta[name="description"]');
+          if (metaDesc) metaDesc.setAttribute('content', m.desc);
+          var ogTitle = document.querySelector('meta[property="og:title"]');
+          if (ogTitle) ogTitle.setAttribute('content', m.ogTitle);
+          var ogDesc = document.querySelector('meta[property="og:description"]');
+          if (ogDesc) ogDesc.setAttribute('content', m.ogDesc);
+          var dict = STR[lang];
+          var els = document.querySelectorAll('[data-i18n]');
+          for (var i = 0; i < els.length; i++) {
+            var v = dict[els[i].getAttribute('data-i18n')];
+            if (v != null) els[i].innerHTML = v; // trusted static strings from this file
+          }
+          themeBtn.title = dict.themeTitle;
+          themeBtn.setAttribute('aria-label', dict.themeTitle);
+          select.value = lang;
+        }
+
+        select.addEventListener('change', function () {
+          lang = select.value;
+          try {
+            localStorage.setItem('locale', lang);
+          } catch (e) {}
+          apply();
+        });
+
+        apply();
+      })();
+    </script>
     <script>
       (function () {
         var btn = document.getElementById('theme-toggle');
