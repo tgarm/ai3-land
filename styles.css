@@ -2,8 +2,11 @@
  * ai3.land — dual-theme landing page.
  * Tokens shared across the tool family (dark = GitHub Dark, light = GitHub Light);
  * dark is the default, light applies via html[data-theme='light'].
+ * Keep this block identical (names + values) across the family stylesheets:
+ * ai3.land, PermaDrive (frontend/src/styles.css), ai3-xdm-bridge (src/styles.css).
  */
 :root {
+  color-scheme: dark;
   --bg: #0e1116;
   --surface: #161b22;
   --surface-2: #1d232c;
@@ -11,8 +14,17 @@
   --text: #e6edf3;
   --muted: #8b949e;
   --accent: #4f9cf7;
+  --ok: #3fb950;
+  --warn: #d29922;
+  --danger: #f85149;
+  /* Chain identity colors: consensus chain = teal (storage side),
+     EVM domain = purple (payments/gas side). */
+  --chain-consensus: #2dd4bf;
+  --chain-evm: #a78bfa;
+  font-family: -apple-system, 'PingFang SC', 'Segoe UI', Roboto, sans-serif;
 }
 :root[data-theme='light'] {
+  color-scheme: light;
   --bg: #f6f8fa;
   --surface: #ffffff;
   --surface-2: #f0f3f6;
@@ -20,6 +32,11 @@
   --text: #1f2328;
   --muted: #656d76;
   --accent: #0969da;
+  --ok: #1a7f37;
+  --warn: #9a6700;
+  --danger: #cf222e;
+  --chain-consensus: #0f766e;
+  --chain-evm: #6d28d9;
 }
 
 * {
