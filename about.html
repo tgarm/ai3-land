@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>About Autonomys (AI3) — ai3.land</title>
+    <meta
+      name="description"
+      content="A short primer on the Autonomys Network: permanent on-chain storage, Proof-of-Archival-Storage, the AI3 token, Auto EVM and XDM — plus wallets (SubWallet, Talisman), where to get AI3, and farming resources."
+    />
+    <meta property="og:title" content="About Autonomys (AI3) — ai3.land" />
+    <meta
+      property="og:description"
+      content="A short primer on the Autonomys Network — plus wallets, where to get AI3, and farming resources."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a flash.
+      (function () {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-mark">◆</span>
+          <div>
+            <h1><a class="brand-link" href="./">ai3.land</a></h1>
+            <p class="tagline" data-i18n="tagline">Open-source tools for the Autonomys Network</p>
+          </div>
+        </div>
+        <select id="lang-select" class="btn ghost small lang-select" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+        </select>
+        <button id="theme-toggle" class="btn ghost small" title="Toggle color scheme" aria-label="Toggle color scheme">🌙</button>
+      </header>
+
+      <main>
+        <!-- External facts, with date-stamped sources:
+             - Network: official docs (docs.autonomys.xyz), 2026-11 — Proof-of-Archival-Storage
+               consensus, farmers storing archival history + the DSN, domains for smart contracts.
+             - Official site: autonomys.xyz (per Autonomys's own properties, 2026-11).
+             - Exchanges: per CoinGecko (coingecko.com/en/coins/autonomys-network) and CoinMarketCap
+               (coinmarketcap.com/currencies/autonomys-network), 2026-11 — the AI3/USDT pair on
+               XT.com is the only active spot market; re-check before relying on this.
+             - Wallets: subwallet.app and talisman.xyz, 2026-11.
+             - ai3.farm: friendly link in the footer — reciprocal, their community-tools
+               directory lists our XDM Bridge (2026-11). Not a content link:
+               in-content links stay service-related. -->
+        <p class="intro" data-i18n="aLead">
+          Autonomys is a decentralized layer-0 network: a consensus chain for permanent storage,
+          attached domains for smart contracts, and <strong>AI3</strong> as the native token that
+          pays for it all. The basics, in three ideas:
+        </p>
+
+        <section class="net">
+          <div class="grid">
+            <article class="card fact">
+              <h3 data-i18n="net1Title">Permanent storage</h3>
+              <p data-i18n="net1Desc">
+                Files, text and app records published to the consensus chain are split into pieces and
+                archived permanently by the farmer network: one-time fee, no subscriptions, no expiry.
+                Content is addressed by its CID and stays retrievable from the Distributed Storage
+                Network (DSN).
+              </p>
+            </article>
+            <article class="card fact">
+              <h3 data-i18n="net2Title">Proof-of-Archival-Storage</h3>
+              <p data-i18n="net2Desc">
+                Farmers secure the chain not by burning energy but by storing its full archival history
+                on everyday hardware — network security and permanent storage come from the same disk
+                space.
+              </p>
+            </article>
+            <article class="card fact">
+              <h3 data-i18n="net3Title">Domains &amp; XDM</h3>
+              <p data-i18n="net3Desc">
+                Smart contracts run on Auto EVM, an EVM-compatible execution domain secured by the
+                consensus chain; XDM is the cross-domain messaging that connects the two. The
+                family's XDM Bridge is a pure-frontend client for exactly that.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="net gs">
+          <h2 data-i18n="gsTitle">Getting started</h2>
+          <div class="grid">
+            <article class="card fact">
+              <h3 data-i18n="gs1Title">Get a wallet</h3>
+              <p data-i18n="gs1Desc">
+                SubWallet and Talisman are non-custodial wallets covering the Autonomys consensus
+                chain and its Auto EVM domain. Install one, back up your seed phrase, and the
+                ai3.land tools are ready to use.
+              </p>
+              <div class="actions">
+                <a class="btn small" href="https://www.subwallet.app/" target="_blank" rel="noreferrer noopener">SubWallet</a>
+                <a class="btn small" href="https://talisman.xyz/" target="_blank" rel="noreferrer noopener">Talisman</a>
+              </div>
+            </article>
+            <article class="card fact">
+              <h3 data-i18n="gs2Title">Get AI3</h3>
+              <p data-i18n="gs2Desc">
+                AI3 pays for storage and gas, and trades on centralized exchanges. At the time of
+                writing (2026-11), the AI3/USDT pair on XT.com is the active spot market — price
+                trackers list the current venues.
+              </p>
+              <div class="actions">
+                <a class="btn small" href="https://www.xt.com/" target="_blank" rel="noreferrer noopener">XT.com</a>
+                <a class="btn small" href="https://www.coingecko.com/en/coins/autonomys-network" target="_blank" rel="noreferrer noopener">CoinGecko</a>
+                <a class="btn small" href="https://coinmarketcap.com/currencies/autonomys-network/" target="_blank" rel="noreferrer noopener">CoinMarketCap</a>
+              </div>
+            </article>
+            <article class="card fact">
+              <h3 data-i18n="gs3Title">Or earn it: farming</h3>
+              <p data-i18n="gs3Desc">
+                Farmers pledge disk space to secure the network and earn AI3 rewards; everyday
+                hardware is enough. The official Space Acres app turns spare disk space into a
+                farm in a few clicks — the docs cover setup end to end.
+              </p>
+              <div class="actions">
+                <a class="btn small" href="https://docs.autonomys.xyz/" target="_blank" rel="noreferrer noopener" data-i18n="gs3Docs">Autonomys docs</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <p class="net-links muted">
+          <span data-i18n="moreLabel">Learn more:</span>
+          <a href="https://autonomys.xyz/" target="_blank" rel="noreferrer noopener">autonomys.xyz</a> ·
+          <a href="https://docs.autonomys.xyz/" target="_blank" rel="noreferrer noopener">Autonomys docs</a> ·
+          <a href="https://explorer.auto-evm.mainnet.autonomys.xyz" target="_blank" rel="noreferrer noopener">Auto EVM explorer</a>
+        </p>
+      </main>
+
+      <footer class="app-footer muted">
+        <span data-i18n="footer">Independent open-source projects, not an official Autonomys product ·</span>
+        <a href="./">ai3.land</a>
+        ·
+        <a href="https://github.com/tgarm" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <!-- Friendly link, reciprocal: ai3.farm's community-tools directory lists our XDM Bridge (2026-11). -->
+        ·
+        <span data-i18n="friendLink">Friendly link:</span>
+        <a href="https://ai3.farm/" target="_blank" rel="noreferrer noopener">ai3.farm</a>
+      </footer>
+    </div>
+    <script>
+      // i18n (same locale rules as the family's React apps): saved value →
+      // browser language → 'en'. Zero-build: an inline dictionary drives all
+      // [data-i18n] elements; <html lang>, <title> and meta descriptions follow.
+      (function () {
+        var META = {
+          en: {
+            title: 'About Autonomys (AI3) — ai3.land',
+            desc: 'A short primer on the Autonomys Network: permanent on-chain storage, Proof-of-Archival-Storage, the AI3 token, Auto EVM and XDM — plus wallets (SubWallet, Talisman), where to get AI3, and farming resources.',
+            ogTitle: 'About Autonomys (AI3) — ai3.land',
+            ogDesc: 'A short primer on the Autonomys Network — plus wallets, where to get AI3, and farming resources.',
+          },
+          zh: {
+            title: '关于 Autonomys（AI3）— ai3.land',
+            desc: 'Autonomys 网络简明入门：链上永久存储、Proof-of-Archival-Storage 共识、AI3 代币、Auto EVM 与 XDM —— 附钱包（SubWallet、Talisman）、AI3 获取途径与 farming 资源。',
+            ogTitle: '关于 Autonomys（AI3）— ai3.land',
+            ogDesc: 'Autonomys 网络简明入门 —— 附钱包、AI3 获取途径与 farming 资源。',
+          },
+        };
+        var STR = {
+          en: {
+            tagline: 'Open-source tools for the Autonomys Network',
+            aLead: 'Autonomys is a decentralized layer-0 network: a consensus chain for permanent storage, attached domains for smart contracts, and <strong>AI3</strong> as the native token that pays for it all. The basics, in three ideas:',
+            net1Title: 'Permanent storage',
+            net1Desc: 'Files, text and app records published to the consensus chain are split into pieces and archived permanently by the farmer network: one-time fee, no subscriptions, no expiry. Content is addressed by its CID and stays retrievable from the Distributed Storage Network (DSN).',
+            net2Title: 'Proof-of-Archival-Storage',
+            net2Desc: 'Farmers secure the chain not by burning energy but by storing its full archival history on everyday hardware — network security and permanent storage come from the same disk space.',
+            net3Title: 'Domains &amp; XDM',
+            net3Desc: 'Smart contracts run on Auto EVM, an EVM-compatible execution domain secured by the consensus chain; XDM is the cross-domain messaging that connects the two. The family\'s XDM Bridge is a pure-frontend client for exactly that.',
+            gsTitle: 'Getting started',
+            gs1Title: 'Get a wallet',
+            gs1Desc: 'SubWallet and Talisman are non-custodial wallets covering the Autonomys consensus chain and its Auto EVM domain. Install one, back up your seed phrase, and the ai3.land tools are ready to use.',
+            gs2Title: 'Get AI3',
+            gs2Desc: 'AI3 pays for storage and gas, and trades on centralized exchanges. At the time of writing (2026-11), the AI3/USDT pair on XT.com is the active spot market — price trackers list the current venues.',
+            gs3Title: 'Or earn it: farming',
+            gs3Desc: 'Farmers pledge disk space to secure the network and earn AI3 rewards; everyday hardware is enough. The official Space Acres app turns spare disk space into a farm in a few clicks — the docs cover setup end to end.',
+            gs3Docs: 'Autonomys docs',
+            moreLabel: 'Learn more:',
+            footer: 'Independent open-source projects, not an official Autonomys product ·',
+            friendLink: 'Friendly link:',
+            themeTitle: 'Toggle color scheme',
+          },
+          zh: {
+            tagline: 'Autonomys 网络的开源工具',
+            aLead: 'Autonomys 是一个去中心化的 layer-0 网络：共识链负责永久存储，附属域运行智能合约，<strong>AI3</strong> 是支付这一切的原生代币。三个基本概念，快速认识它：',
+            net1Title: '永久存储',
+            net1Desc: '发布到共识链的文件、文本与应用记录会被切分归档，由 farmer 网络永久存储：一次性付费，无订阅、不过期。内容以 CID 寻址，可随时从分布式存储网络（DSN）取回。',
+            net2Title: 'PoAS 共识（Proof-of-Archival-Storage）',
+            net2Desc: 'farmer 不是靠消耗算力，而是用普通硬件存储链的完整归档历史来保护网络安全 —— 安全性与永久存储来自同一份磁盘空间。',
+            net3Title: '域与 XDM',
+            net3Desc: '智能合约运行在受共识链保护的 Auto EVM 域上；XDM 是连接两者的跨域消息协议 —— 家族里的 XDM 跨域桥就是它的纯前端客户端。',
+            gsTitle: '开始使用',
+            gs1Title: '获取钱包',
+            gs1Desc: 'SubWallet 与 Talisman 是支持 Autonomys 共识链及 Auto EVM 域的非托管钱包。装好一个、备份好助记词，即可使用 ai3.land 家族的工具。',
+            gs2Title: '获取 AI3',
+            gs2Desc: 'AI3 用于支付存储与 gas，在中心化交易所交易。截至撰稿时（2026-11），XT.com 的 AI3/USDT 是活跃的现货市场 —— 最新市场列表见行情追踪站。',
+            gs3Title: '或者「挖」它：farming',
+            gs3Desc: 'farmer 贡献硬盘空间保护网络安全并获得 AI3 奖励，普通硬件即可参与。官方应用 Space Acres 几步就能把闲置硬盘变成 farm，具体流程见文档。',
+            gs3Docs: 'Autonomys 文档',
+            moreLabel: '了解更多：',
+            footer: '独立开源项目，非 Autonomys 官方产品 ·',
+            friendLink: '友情链接：',
+            themeTitle: '切换配色方案',
+          },
+        };
+        var LOCALES = ['en', 'zh'];
+
+        function detect() {
+          try {
+            var saved = localStorage.getItem('locale');
+            if (saved && LOCALES.indexOf(saved) !== -1) return saved;
+          } catch (e) {}
+          var candidates = [navigator.language].concat(navigator.languages || []);
+          for (var i = 0; i < candidates.length; i++) {
+            var base = candidates[i] && candidates[i].split('-')[0];
+            if (base && LOCALES.indexOf(base) !== -1) return base;
+          }
+          return 'en';
+        }
+
+        var lang = detect();
+        var select = document.getElementById('lang-select');
+        var themeBtn = document.getElementById('theme-toggle');
+
+        function apply() {
+          document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+          var m = META[lang];
+          document.title = m.title;
+          var metaDesc = document.querySelector('meta[name="description"]');
+          if (metaDesc) metaDesc.setAttribute('content', m.desc);
+          var ogTitle = document.querySelector('meta[property="og:title"]');
+          if (ogTitle) ogTitle.setAttribute('content', m.ogTitle);
+          var ogDesc = document.querySelector('meta[property="og:description"]');
+          if (ogDesc) ogDesc.setAttribute('content', m.ogDesc);
+          var dict = STR[lang];
+          var els = document.querySelectorAll('[data-i18n]');
+          for (var i = 0; i < els.length; i++) {
+            var v = dict[els[i].getAttribute('data-i18n')];
+            if (v != null) els[i].innerHTML = v; // trusted static strings from this file
+          }
+          themeBtn.title = dict.themeTitle;
+          themeBtn.setAttribute('aria-label', dict.themeTitle);
+          select.value = lang;
+        }
+
+        select.addEventListener('change', function () {
+          lang = select.value;
+          try {
+            localStorage.setItem('locale', lang);
+          } catch (e) {}
+          apply();
+        });
+
+        apply();
+      })();
+    </script>
+    <script>
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        function render() {
+          btn.textContent = document.documentElement.dataset.theme === 'dark' ? '🌙' : '☀️';
+        }
+        btn.addEventListener('click', function () {
+          var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+          document.documentElement.dataset.theme = next;
+          localStorage.setItem('theme', next);
+          render();
+        });
+        render();
+      })();
+    </script>
+  </body>
+</html>

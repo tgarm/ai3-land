@@ -89,6 +89,44 @@ body {
   margin: 8px 0 24px;
 }
 
+/* Network primer (about.html) + its homepage entry button */
+.net-cta {
+  margin: 0 0 28px;
+}
+.net > h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+.net.gs {
+  margin-top: 28px;
+}
+.brand-link {
+  color: inherit;
+  text-decoration: none;
+}
+.brand-link:hover {
+  color: var(--accent);
+}
+.fact h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+.fact p {
+  margin: 0;
+}
+.net-links {
+  margin: 14px 0 28px;
+  font-size: 13px;
+}
+.net-links a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.net-links a:hover {
+  color: var(--text);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
