@@ -41,6 +41,8 @@
         <select id="lang-select" class="btn ghost small lang-select" aria-label="Language">
           <option value="en">English</option>
           <option value="zh">中文</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Español</option>
         </select>
         <button id="theme-toggle" class="btn ghost small" title="Toggle color scheme" aria-label="Toggle color scheme">🌙</button>
       </header>
@@ -120,6 +122,18 @@
             ogTitle: 'ai3.land — Autonomys 网络的开源工具',
             ogDesc: 'PermaDrive 与 XDM Bridge：Autonomys 的纯前端开源工具。无账户、无后端。',
           },
+          de: {
+            title: 'ai3.land — Open-Source-Werkzeuge für das Autonomys-Netzwerk',
+            desc: 'PermaDrive (permanente On-chain-Dateispeicherung) und XDM Bridge (Consensus ↔ Auto-EVM-Übertragungen): reine Frontend-Open-Source-Werkzeuge für das Autonomys-Netzwerk. Keine Konten, keine Backends — Ihre Schlüssel bleiben in Ihrer Wallet.',
+            ogTitle: 'ai3.land — Open-Source-Werkzeuge für das Autonomys-Netzwerk',
+            ogDesc: 'PermaDrive und XDM Bridge: reine Frontend-Open-Source-Werkzeuge für Autonomys. Keine Konten, keine Backends.',
+          },
+          es: {
+            title: 'ai3.land — Herramientas de código abierto para la red Autonomys',
+            desc: 'PermaDrive (almacenamiento permanente de archivos on-chain) y XDM Bridge (transferencias consensus ↔ Auto EVM): herramientas de código abierto y frontend puro para la red Autonomys. Sin cuentas, sin backends — sus claves se quedan en su cartera.',
+            ogTitle: 'ai3.land — Herramientas de código abierto para la red Autonomys',
+            ogDesc: 'PermaDrive y XDM Bridge: herramientas de código abierto y frontend puro para Autonomys. Sin cuentas, sin backends.',
+          },
         };
         var STR = {
           en: {
@@ -152,8 +166,38 @@
             friendLink: '友情链接：',
             themeTitle: '切换配色方案',
           },
+          de: {
+            tagline: 'Open-Source-Werkzeuge für das Autonomys-Netzwerk',
+            intro: 'Autonomys ist ein permanentes, dezentrales Speichernetzwerk; <strong>AI3</strong> ist sein nativer Token. Die folgenden Werkzeuge sind freie Software und reine Frontend-Clients dafür: keine Konten, keine Backends — der Kettenzugang läuft direkt aus Ihrem Browser zu erlaubnisfreier öffentlicher Infrastruktur, und Ihre Schlüssel bleiben in Ihrer Wallet.',
+            aboutCta: 'Über Autonomys',
+            pdDesc: 'Permanente Dateispeicherung. Dateien werden im Browser zu IPLD-DAGs verpackt und direkt an die Autonomys-Consensus-Kette veröffentlicht — einmal die On-chain-Speichergebühr zahlen, und das Farmer-Netzwerk archiviert sie dauerhaft. Keine Konten, kein Ablauf von Guthaben, Abruf per Manifest.',
+            pdMeta: 'permadrive.ai3.land · permanente Speicherung · Zahlung pro Nutzung',
+            pdOpen: 'PermaDrive öffnen',
+            xdmDesc: 'Domänenübergreifende AI3-Übertragungen. Bewegen Sie Token in beide Richtungen zwischen der Autonomys-Consensus-Kette und der Auto-EVM-Domäne, direkt aus Ihrer Wallet — mit Fortschrittsverfolgung für das Ankunftsfenster und gedrosselten RPC-Aufrufen, die die Limits öffentlicher Knoten respektieren.',
+            xdmMeta: 'xdm-bridge.ai3.land · XDM-Protokoll · reines Frontend',
+            xdmOpen: 'XDM Bridge öffnen',
+            more: 'Weitere Werkzeuge in Entwicklung.',
+            footer: 'Unabhängige Open-Source-Projekte, kein offizielles Autonomys-Produkt ·',
+            friendLink: 'Partnerseite:',
+            themeTitle: 'Farbschema wechseln',
+          },
+          es: {
+            tagline: 'Herramientas de código abierto para la red Autonomys',
+            intro: 'Autonomys es una red de almacenamiento permanente y descentralizada; <strong>AI3</strong> es su token nativo. Las siguientes herramientas son clientes de software libre y de frontend puro: sin cuentas, sin backends — el acceso a la cadena va directamente desde su navegador a infraestructura pública sin permisos, y sus claves se quedan en su cartera.',
+            aboutCta: 'Sobre Autonomys',
+            pdDesc: 'Almacenamiento permanente de archivos. Los archivos se empaquetan en DAGs IPLD en el navegador y se publican directamente en la cadena de consenso de Autonomys — pague la tarifa única de almacenamiento on-chain y la red de farmers los archiva para siempre. Sin cuentas, sin caducidad de créditos, recuperación por manifest.',
+            pdMeta: 'permadrive.ai3.land · almacenamiento permanente · pago por uso',
+            pdOpen: 'Abrir PermaDrive',
+            xdmDesc: 'Transferencias interdominio de AI3. Mueva tokens en ambas direcciones entre la cadena de consenso de Autonomys y el dominio Auto EVM, directamente desde su cartera — con seguimiento del progreso de la ventana de llegada interdominio y llamadas RPC espaciadas que respetan los límites de los nodos públicos.',
+            xdmMeta: 'xdm-bridge.ai3.land · protocolo XDM · frontend puro',
+            xdmOpen: 'Abrir XDM Bridge',
+            more: 'Más herramientas en desarrollo.',
+            footer: 'Proyectos de código abierto independientes, no son un producto oficial de Autonomys ·',
+            friendLink: 'Web amiga:',
+            themeTitle: 'Cambiar esquema de colores',
+          },
         };
-        var LOCALES = ['en', 'zh'];
+        var LOCALES = ['en', 'zh', 'de', 'es'];
 
         function detect() {
           try {
@@ -173,7 +217,7 @@
         var themeBtn = document.getElementById('theme-toggle');
 
         function apply() {
-          document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+          document.documentElement.lang = { en: 'en', zh: 'zh-CN', de: 'de', es: 'es' }[lang];
           var m = META[lang];
           document.title = m.title;
           var metaDesc = document.querySelector('meta[name="description"]');

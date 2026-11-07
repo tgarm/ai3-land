@@ -40,6 +40,8 @@
         <select id="lang-select" class="btn ghost small lang-select" aria-label="Language">
           <option value="en">English</option>
           <option value="zh">中文</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Español</option>
         </select>
         <button id="theme-toggle" class="btn ghost small" title="Toggle color scheme" aria-label="Toggle color scheme">🌙</button>
       </header>
@@ -173,6 +175,18 @@
             ogTitle: '关于 Autonomys（AI3）— ai3.land',
             ogDesc: 'Autonomys 网络简明入门 —— 附钱包、AI3 获取途径与 farming 资源。',
           },
+          de: {
+            title: 'Über Autonomys (AI3) — ai3.land',
+            desc: 'Eine kurze Einführung in das Autonomys-Netzwerk: permanente On-chain-Speicherung, Proof-of-Archival-Storage, der AI3-Token, Auto EVM und XDM — dazu Wallets (SubWallet, Talisman), Bezugsquellen für AI3 und Farming-Ressourcen.',
+            ogTitle: 'Über Autonomys (AI3) — ai3.land',
+            ogDesc: 'Eine kurze Einführung in das Autonomys-Netzwerk — dazu Wallets, Bezugsquellen für AI3 und Farming-Ressourcen.',
+          },
+          es: {
+            title: 'Sobre Autonomys (AI3) — ai3.land',
+            desc: 'Una breve introducción a la red Autonomys: almacenamiento permanente on-chain, Proof-of-Archival-Storage, el token AI3, Auto EVM y XDM — además de carteras (SubWallet, Talisman), dónde conseguir AI3 y recursos de farming.',
+            ogTitle: 'Sobre Autonomys (AI3) — ai3.land',
+            ogDesc: 'Una breve introducción a la red Autonomys — además de carteras, dónde conseguir AI3 y recursos de farming.',
+          },
         };
         var STR = {
           en: {
@@ -221,8 +235,54 @@
             friendLink: '友情链接：',
             themeTitle: '切换配色方案',
           },
+          de: {
+            tagline: 'Open-Source-Werkzeuge für das Autonomys-Netzwerk',
+            backHome: '← Zurück zu den Werkzeugen',
+            aLead: 'Autonomys ist ein dezentrales Layer-0-Netzwerk: eine Consensus-Kette für permanente Speicherung, angegliederte Domänen für Smart Contracts und <strong>AI3</strong> als nativer Token, der das alles bezahlt. Die Grundlagen in drei Ideen:',
+            net1Title: 'Permanente Speicherung',
+            net1Desc: 'Dateien, Texte und Anwendungsdaten, die an die Consensus-Kette veröffentlicht werden, werden in Stücke zerlegt und vom Farmer-Netzwerk dauerhaft archiviert: einmalige Gebühr, keine Abos, kein Ablauf. Inhalte werden über ihre CID adressiert und bleiben im Distributed Storage Network (DSN) abrufbar.',
+            net2Title: 'Proof-of-Archival-Storage',
+            net2Desc: 'Farmer sichern die Kette nicht durch Energieverbrauch, sondern indem sie ihre vollständige Archivgeschichte auf gewöhnlicher Hardware speichern — Netzwerksicherheit und permanente Speicherung kommen vom selben Speicherplatz.',
+            net3Title: 'Domänen &amp; XDM',
+            net3Desc: 'Smart Contracts laufen auf Auto EVM, einer EVM-kompativen Ausführungsdomäne, die von der Consensus-Kette gesichert wird; XDM ist das domänenübergreifende Messaging, das beide verbindet. Die XDM Bridge der Familie ist ein reiner Frontend-Client dafür.',
+            gsTitle: 'Einstieg',
+            gs1Title: 'Wallet besorgen',
+            gs1Desc: 'SubWallet und Talisman sind nicht-verwahrende Wallets, die die Autonomys-Consensus-Kette und ihre Auto-EVM-Domäne abdecken. Installieren Sie eine, sichern Sie Ihre Seed-Phrase und die ai3.land-Werkzeuge sind einsatzbereit.',
+            gs2Title: 'AI3 besorgen',
+            gs2Desc: 'AI3 bezahlt Speicherung und Gas und wird an zentralen Börsen gehandelt. Zum Zeitpunkt der Erstellung (2026-11) ist das Paar AI3/USDT auf XT.com der aktive Spot-Markt — Preis-Tracker listen die aktuellen Handelsplätze.',
+            gs3Title: 'Oder verdienen: Farming',
+            gs3Desc: 'Farmer stellen Speicherplatz bereit, um das Netzwerk zu sichern, und verdienen AI3-Belohnungen; gewöhnliche Hardware genügt. Die offizielle App Space Acres macht mit wenigen Klicks aus freiem Speicherplatz eine Farm — die Dokumentation deckt die Einrichtung vollständig ab.',
+            gs3Docs: 'Autonomys-Dokumentation',
+            moreLabel: 'Mehr erfahren:',
+            footer: 'Unabhängige Open-Source-Projekte, kein offizielles Autonomys-Produkt ·',
+            friendLink: 'Partnerseite:',
+            themeTitle: 'Farbschema wechseln',
+          },
+          es: {
+            tagline: 'Herramientas de código abierto para la red Autonomys',
+            backHome: '← Volver a las herramientas',
+            aLead: 'Autonomys es una red layer-0 descentralizada: una cadena de consenso para el almacenamiento permanente, dominios adjuntos para contratos inteligentes y <strong>AI3</strong> como token nativo que lo paga todo. Los básicos, en tres ideas:',
+            net1Title: 'Almacenamiento permanente',
+            net1Desc: 'Los archivos, textos y registros de aplicaciones publicados en la cadena de consenso se dividen en piezas y la red de farmers los archiva permanentemente: pago único, sin suscripciones, sin caducidad. El contenido se direcciona por su CID y sigue siendo recuperable de la Distributed Storage Network (DSN).',
+            net2Title: 'Proof-of-Archival-Storage',
+            net2Desc: 'Los farmers aseguran la cadena no quemando energía, sino almacenando su historia completa de archivo en hardware cotidiana — la seguridad de la red y el almacenamiento permanente provienen del mismo espacio en disco.',
+            net3Title: 'Dominios y XDM',
+            net3Desc: 'Los contratos inteligentes se ejecutan en Auto EVM, un dominio de ejecución compatible con EVM asegurado por la cadena de consenso; XDM es la mensajería interdominio que conecta ambos. La XDM Bridge de la familia es un cliente de frontend puro para exactamente eso.',
+            gsTitle: 'Para empezar',
+            gs1Title: 'Consiga una cartera',
+            gs1Desc: 'SubWallet y Talisman son carteras sin custodia que cubren la cadena de consenso de Autonomys y su dominio Auto EVM. Instale una, respalde su frase semilla y las herramientas de ai3.land están listas para usar.',
+            gs2Title: 'Consiga AI3',
+            gs2Desc: 'AI3 paga el almacenamiento y el gas, y se negocia en exchanges centralizados. En el momento de escribir esto (2026-11), el par AI3/USDT en XT.com es el mercado spot activo — los rastreadores de precios listan los mercados actuales.',
+            gs3Title: 'O gánelo: farming',
+            gs3Desc: 'Los farmers aportan espacio en disco para asegurar la red y ganan recompensas en AI3; basta hardware cotidiano. La aplicación oficial Space Acres convierte espacio libre en una granja en unos clics — la documentación cubre la configuración de principio a fin.',
+            gs3Docs: 'Documentación de Autonomys',
+            moreLabel: 'Saber más:',
+            footer: 'Proyectos de código abierto independientes, no son un producto oficial de Autonomys ·',
+            friendLink: 'Web amiga:',
+            themeTitle: 'Cambiar esquema de colores',
+          },
         };
-        var LOCALES = ['en', 'zh'];
+        var LOCALES = ['en', 'zh', 'de', 'es'];
 
         function detect() {
           try {
@@ -242,7 +302,7 @@
         var themeBtn = document.getElementById('theme-toggle');
 
         function apply() {
-          document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+          document.documentElement.lang = { en: 'en', zh: 'zh-CN', de: 'de', es: 'es' }[lang];
           var m = META[lang];
           document.title = m.title;
           var metaDesc = document.querySelector('meta[name="description"]');
