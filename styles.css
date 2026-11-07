@@ -107,6 +107,18 @@ body {
 .brand-link:hover {
   color: var(--accent);
 }
+.back-link {
+  margin: 0 0 16px;
+  font-size: 13px;
+}
+.back-link a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.back-link a:hover {
+  color: var(--text);
+}
 .fact h3 {
   margin: 0 0 6px;
   font-size: 14px;
